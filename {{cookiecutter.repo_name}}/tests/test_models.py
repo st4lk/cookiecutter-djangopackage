@@ -2,13 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-test_{{ cookiecutter.repo_name }}
-------------
-
-Tests for `{{ cookiecutter.repo_name }}` models module.
+Tests for `{{ cookiecutter.app_name }}` models module.
 """
 
 from django.test import TestCase
+from model_mommy import mommy
 
 from {{ cookiecutter.app_name }} import models
 
@@ -16,10 +14,12 @@ from {{ cookiecutter.app_name }} import models
 class Test{{ cookiecutter.app_name|capitalize }}(TestCase):
 
     def setUp(self):
+        super(Test{{ cookiecutter.app_name|capitalize }}, self).setUp()
         pass
 
     def test_something(self):
         pass
 
     def tearDown(self):
+        super(Test{{ cookiecutter.app_name|capitalize }}, self).tearDown()
         pass

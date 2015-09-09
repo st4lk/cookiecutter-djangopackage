@@ -3,4 +3,5 @@ httpretty
 unittest2
 coverage
 mock
+model-mommy
 tox>=1.7.0
