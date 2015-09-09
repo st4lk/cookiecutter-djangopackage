@@ -1,9 +1,7 @@
-.. :changelog:
-
 History
--------
+=======
 
 {{ cookiecutter.version }} ({{ cookiecutter.release_date }})
-++++++++++++++++++
+---------------
 
-* First release on PyPI.
+- First release on pypi.

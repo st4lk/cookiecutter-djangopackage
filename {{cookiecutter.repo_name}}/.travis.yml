@@ -1,20 +1,28 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 
 python:
-  - "3.4"
-  - "3.3"
   - "2.7"
 
-before_install:
-  - pip install codecov
+env:
+  - TOXENV=py34-16
+  - TOXENV=py34-17
+  - TOXENV=py34-18
+  - TOXENV=py26-16
+  - TOXENV=py27-16
+  - TOXENV=py27-17
+  - TOXENV=py27-18
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -r requirements-test.txt
+branches:
+    only:
+        - master
 
-# command to run tests using coverage, e.g. python setup.py test
-script: coverage run --source {{ cookiecutter.app_name }} runtests.py
+install: pip install --quiet tox
 
-after_success:
-  - codecov
+# command to run tests
+script: tox
+
+after_script:
+    - if [ $TOXENV == "py27-18" ]; then
+        pip install --quiet coveralls;
+        coveralls;
+      fi
