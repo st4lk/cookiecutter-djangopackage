@@ -103,7 +103,8 @@ LOGGING = {
     'loggers': {
         '': {
             'handlers': ['console', ],
-            'level': "DEBUG",
+            # 'level': "DEBUG",  # will log every SQL to console
+            'level': "INFO",
         },
     }
 }
