@@ -2,4 +2,5 @@ pytest-django
 httpretty
 unittest2
 coverage
+mock
 tox>=1.7.0
