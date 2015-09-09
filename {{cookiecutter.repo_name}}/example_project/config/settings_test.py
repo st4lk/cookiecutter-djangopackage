@@ -8,3 +8,6 @@ DATABASES = {
         'NAME': ':memory:',
     }
 }
+
+# celery, if any
+CELERY_ALWAYS_EAGER = True
