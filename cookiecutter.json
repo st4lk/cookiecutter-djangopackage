@@ -9,5 +9,7 @@
   "release_date": "2015-01-01",
   "year": "2015",
   "version": "0.1.0",
-  "celery": "false"
+  "celery": "false",
+  "templates": "false",
+  "static": "false"
 }

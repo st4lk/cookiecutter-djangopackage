@@ -42,7 +42,7 @@ setup(
     description="""{{ cookiecutter.project_short_description }}""",
     long_description=readme + '\n\n' + history,
     platforms=('Any'),
-    author='{{ cookiecutter.full_name }}',
+    author='{{cookiecutter.github_username}}',
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
     packages=find_packages(),

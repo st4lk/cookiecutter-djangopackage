@@ -1,1 +1,2 @@
 django>=1.6,<1.9
+{% if cookiecutter.celery.lower() not in ('', 'false') %}celery>=3.0{% endif %}

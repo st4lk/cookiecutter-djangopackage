@@ -91,6 +91,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+{% if cookiecutter.celery.lower() not in ('', 'false') %}
+# celery
+BROKER_URL = 'memory://'
+CELERY_ALWAYS_EAGER = True
+{% endif %}
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
