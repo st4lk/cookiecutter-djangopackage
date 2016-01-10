@@ -35,6 +35,9 @@ if sys.argv[-1] == 'tag':
 readme = __read('README.rst'),
 history = __read('HISTORY.rst'),
 install_requires = __read('requirements.txt').split()
+dependency_links = [pkg for pkg in install_requires if pkg.startswith('http')]
+# http://stackoverflow.com/a/17442663/821594
+install_requires = [pkg for pkg in install_requires if not pkg.startswith('http')]
 
 setup(
     name='{{ cookiecutter.project_name }}',
@@ -51,6 +54,7 @@ setup(
     license="BSD",
     zip_safe=False,
     keywords='{{ cookiecutter.repo_name }}',
+    dependency_links=dependency_links,
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Framework :: Django',

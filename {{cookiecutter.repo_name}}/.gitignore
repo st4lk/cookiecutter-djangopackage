@@ -43,3 +43,8 @@ output/*/index.html
 docs/_build
 
 *.TODO
+HISTORY.rst
+README.rst
+settings_local.py
+*.sqlite
+*.sqlite3

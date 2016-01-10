@@ -100,17 +100,30 @@ CELERY_ALWAYS_EAGER = True
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose_formatter': {
+            'format': '%(levelname)s:%(name)s: %(message)s '
+            '(%(asctime)s; %(filename)s:%(lineno)d)',
+            'datefmt': "%Y-%m-%d %H:%M:%S",
+        },
+    },
     'handlers': {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
+            'formatter': 'verbose_formatter',
         },
     },
     'loggers': {
         '': {
             'handlers': ['console', ],
-            # 'level': "DEBUG",  # will log every SQL to console
-            'level': "INFO",
+            'level': "DEBUG",  # will log every SQL to console
+            # 'level': "INFO",
         },
     }
 }
+
+try:
+    from settings_local import *
+except ImportError:
+    pass

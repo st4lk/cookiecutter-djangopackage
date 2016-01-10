@@ -15,11 +15,9 @@ class Test{{ cookiecutter.app_name|capitalize }}(TestCase):
 
     def setUp(self):
         super(Test{{ cookiecutter.app_name|capitalize }}, self).setUp()
-        pass
 
     def test_something(self):
         pass
 
     def tearDown(self):
         super(Test{{ cookiecutter.app_name|capitalize }}, self).tearDown()
-        pass
